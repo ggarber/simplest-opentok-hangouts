@@ -18,7 +18,6 @@ def room(room):
         session_id = opentok.create_session().session_id
         ROOMS[room] = session_id
 
-    print session_id
     token = opentok.generate_token(session_id)
     return render_template('room.html',
                            api_key=API_KEY, session_id=session_id, token=token)
